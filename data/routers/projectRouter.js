@@ -12,7 +12,11 @@ const router = express.Router();
 router.get("/", (req, res) => {
   ProjectModel.get()
     .then((projects) => {
-      res.json(projects);
+        if (projects) {
+            res.json(projects);
+        } else {
+            res.status(404).json({ message: "No projects found." });
+        }
     })
     .catch((err) => {
       res.status(500).json({ message: "Error retrieving projects." });
@@ -93,11 +97,11 @@ router.put("/:id", validateProjectId, (req, res) => {
         if (updatedPost) {
             res.json(updatedPost);
         } else {
-            res.status(404).json({ message: "Error: post not found." });
+            res.status(404).json({ message: "Error: project not found." });
         }
     })
     .catch(err => {
-        res.status(500).json({ message: "Error updating post." });
+        res.status(500).json({ message: "Error updating project." });
     });
   });
 
