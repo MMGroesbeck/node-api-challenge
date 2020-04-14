@@ -40,13 +40,23 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+Express allows building custom middleware for the back end (hooray!) and enables routing to help keep code organized (also hooray!)
+
 - [ ] Describe Middleware?
+
+In the context of back end coding, middleware is functions and features (built-in, third-party or custom) that can be "inserted" between inputs and outputs; middleware can handle verification, routing, etc.
 
 - [ ] Describe a Resource?
 
+A resource is something being stored in a database. The app can interpret this data (as e.g. a user, post, file, etc.), but it can be retrieved from the db as generic data (for now).
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+Returning at least a status and a message lets the client know the request was successful (and the info can be interpreted by the front end). The generic success status is 200, which is the default status for replies.
+
 - [ ] How can we partition our application into sub-applications?
+
+On the back end, routing allows the app to be split up into sections based on e.g. the html path used to make a request.
 
 ## Minimum Viable Product
 
